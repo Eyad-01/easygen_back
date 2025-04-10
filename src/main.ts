@@ -25,7 +25,9 @@ async function bootstrap(): Promise<void> {
   console.log(
     `Application running in ${configService.get<string>('NODE_ENV')} mode`,
   );
-
+  app.enableCors({
+    origin: '*',
+  });
   await app.listen(3001);
 }
 
